@@ -26,6 +26,10 @@ const appRoutes: Routes = [
         // redirectTo: 'zhanlu-portfolio'
     },
     {
+        path        : 'report',
+        loadChildren: './zhanlu/portfolio-report/portfolio-report.module#PortfolioReportModule'
+    },
+    {
         path      : '**',
         redirectTo: 'sample'
     }
@@ -60,7 +64,6 @@ const appRoutes: Routes = [
         // App modules
         LayoutModule,
         SampleModule,
-        // PortfolioModule
     ],
     bootstrap   : [
         AppComponent

@@ -23,6 +23,55 @@ export const navigation: FuseNavigation[] = [
         ]
     },
     {
+        id       : 'portfolio-report',
+        title    : '组合报告',
+        type     : 'group',
+        children : [
+            {
+                id: 'realtime',
+                title: '实时监控',
+                type: 'item',
+                icon: 'laptop',
+                url: '/report/realtime'
+            },
+            {
+                id: 'holding',
+                title: '组合持仓',
+                type: 'assignment',
+                icon: 'import_contacts',
+                url: '/report/holding'
+            },
+            {
+                id: 'profitloss',
+                title: '盈亏报表',
+                type: 'item',
+                icon: 'attach_money',
+                url: '/report/profitloss'
+            },
+            {
+                id: 'asset',
+                title: '资产配置',
+                type: 'item',
+                icon: 'description',
+                url: '/report/asset'
+            },
+            {
+                id: 'market',
+                title: '市场动向',
+                type: 'item',
+                icon: 'timeline',
+                url: '/report/market'
+            },
+            {
+                id: 'lookup',
+                title: '个股（债）查询',
+                type: 'item',
+                icon: 'pageview',
+                url: '/report/lookup'
+            }
+        ]
+    },
+    {
         id       : 'applications',
         title    : 'Applications',
         translate: 'NAV.APPLICATIONS',
