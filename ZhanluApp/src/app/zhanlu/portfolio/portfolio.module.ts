@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AddPortfolioComponent } from './add-portfolio/add-portfolio.component';
 import { ImportTradeComponent } from './import-trade/import-trade.component';
 import { PortfolioListComponent } from './portfolio-list/portfolio-list.component';
+import { AddPortfolioDialogComponent } from './add-portfolio-dialog/add-portfolio-dialog.component';
 
 import { FuseSharedModule } from '@fuse/shared.module';
 import { FuseHighlightModule } from '@fuse/components/index';
@@ -14,7 +15,9 @@ import { FuseSidebarModule } from '@fuse/components';
 import { 
   MatIconModule, 
   MatButtonModule,
-  MatTableModule } from '@angular/material';
+  MatTableModule,
+  MatDialogModule 
+} from '@angular/material';
   
 const routes: Routes = [
   {
@@ -37,11 +40,17 @@ const routes: Routes = [
     MatIconModule,
     MatButtonModule,
     MatTableModule,
-    FuseSidebarModule
+    FuseSidebarModule,
+    MatDialogModule
   ],
   declarations: [
     AddPortfolioComponent, 
     ImportTradeComponent, 
-    PortfolioListComponent]
+    PortfolioListComponent, 
+    AddPortfolioDialogComponent
+  ],
+  entryComponents: [
+    AddPortfolioDialogComponent
+  ]
 })
 export class PortfolioModule { }

@@ -51,8 +51,4 @@ export class PortfolioListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  onClick(): void {
-    console.log(this.dataSource);
-  }
 }

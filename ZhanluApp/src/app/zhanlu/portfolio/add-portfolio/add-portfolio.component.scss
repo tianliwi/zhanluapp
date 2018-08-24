@@ -3,9 +3,9 @@
 #file-manager {
 
     .sidebar {
-        width: 320px !important;
-        min-width: 320px !important;
-        max-width: 320px !important;
+        width: 40% !important;
+        min-width: 40% !important;
+        max-width: 40% !important;
 
         &.main-sidebar {
         }
@@ -22,20 +22,20 @@
 
         .header {
             position: relative;
-            height: 160px;
-            min-height: 160px;
-            max-height: 160px;
+            height: 50px;
+            min-height: 50px;
+            max-height: 50px;
 
             @include media-breakpoint-down('sm') {
-                height: 120px;
-                min-height: 120px;
-                max-height: 120px;
+                height: 50px;
+                min-height: 50px;
+                max-height: 50px;
             }
 
             .add-file-button {
                 position: absolute;
                 bottom: -28px;
-                left: 16px;
+                right: 30px;
                 z-index: 999;
             }
         }
