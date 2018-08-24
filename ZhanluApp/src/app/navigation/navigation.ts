@@ -37,8 +37,8 @@ export const navigation: FuseNavigation[] = [
             {
                 id: 'holding',
                 title: '组合持仓',
-                type: 'assignment',
-                icon: 'import_contacts',
+                type: 'item',
+                icon: 'assignment',
                 url: '/report/holding'
             },
             {
