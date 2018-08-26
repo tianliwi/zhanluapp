@@ -3,9 +3,9 @@
 #portfolio {
 
     .sidebar {
-        width: 40% !important;
-        min-width: 40% !important;
-        max-width: 40% !important;
+        width: 25% !important;
+        min-width: 320px !important;
+        max-width: 320px !important;
 
         &.main-sidebar {
         }
@@ -22,14 +22,14 @@
 
         .header {
             position: relative;
-            height: 50px;
-            min-height: 50px;
-            max-height: 50px;
+            height: 100px;
+            min-height: 100px;
+            max-height: 100px;
 
             @include media-breakpoint-down('sm') {
-                height: 50px;
-                min-height: 50px;
-                max-height: 50px;
+                height: 100px;
+                min-height: 100px;
+                max-height: 100px;
             }
 
             .add-file-button {

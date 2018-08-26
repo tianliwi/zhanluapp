@@ -1,8 +1,12 @@
-<div id="portfolio" class="page-layout simple right-sidebar inner-scroll">
+<div id="portfolio" class="page-layout simple left-sidebar inner-scroll">
+
+    <fuse-sidebar class="sidebar main-sidebar" name="file-manager-main-sidebar" position="left" lockedOpen="gt-md">
+        <app-select-portfolio></app-select-portfolio>
+    </fuse-sidebar>
 
     <div class="center" fxFlex>
         <!-- HEADER -->
-        <div class="header mat-accent-bg p-24" fxLayout="column" fxLayoutAlign="space-between start">
+        <div class="header mat-accent-bg p-24 mat-elevation-z24" fxLayout="column" fxLayoutAlign="space-between start">
 
             <div fxLayout="column" fxLayoutAlign="left center" fxLayout.gt-xs="column" fxLayoutAlign.gt-xs="center start">
                 <div class="black-fg" fxLayout="row" fxLayoutAlign="start center">
@@ -11,9 +15,11 @@
                     <span class="secondary-text">投资组合</span>
                 </div>
             </div>
-            <!-- <div>
-                <button mat-raised-button>新增</button>
-            </div> -->
+            <div class="left-side" fxLayout="row">
+                <button mat-icon-button class="sidebar-toggle" (click)="toggleSidebar('file-manager-main-sidebar')">
+                    <mat-icon>menu</mat-icon>
+                </button>
+            </div>
 
             <div>
                 <button mat-fab class="add-file-button mat-warn" (click)="onClickAdd()">
@@ -23,7 +29,7 @@
         </div>
         <!-- / HEADER -->
 
-        <div class="content mat-white-bg" fusePerfectScrollbar>
+        <div class="content mat-white-bg mat-elevation-z12" fusePerfectScrollbar>
             <app-portfolio-list></app-portfolio-list>
         </div>
     </div>
@@ -31,4 +37,5 @@
     <fuse-sidebar class="sidebar details-sidebar" name="file-manager-details-sidebar" position="right" lockedOpen="gt-md">
         <app-import-trade></app-import-trade>
     </fuse-sidebar>
+
 </div>

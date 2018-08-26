@@ -20,8 +20,10 @@ import {
   MatTableModule,
   MatDialogModule,
   MatFormFieldModule,
-  MatRippleModule
+  MatRippleModule,
+  MatCardModule
 } from '@angular/material';
+import { SelectPortfolioComponent } from './select-portfolio/select-portfolio.component';
   
 const routes: Routes = [
   {
@@ -43,7 +45,8 @@ const routes: Routes = [
     FuseSidebarModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatRippleModule
+    MatRippleModule,
+    MatCardModule
   ],
   declarations: [
     AddPortfolioComponent, 
@@ -51,7 +54,8 @@ const routes: Routes = [
     PortfolioListComponent, 
     AddPortfolioDialogComponent,
     TradeListComponent,
-    TradeDialogComponent
+    TradeDialogComponent,
+    SelectPortfolioComponent
   ],
   entryComponents: [
     AddPortfolioDialogComponent,    

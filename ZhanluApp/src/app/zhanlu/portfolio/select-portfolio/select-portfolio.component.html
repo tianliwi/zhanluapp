@@ -1,0 +1,21 @@
+<div class="header mat-accent-bg p-24 mat-elevation-z24" fxLayout="column" fxLayoutAlign="space-between start">
+
+    <div fxLayout="column" fxLayoutAlign="left center" fxLayout.gt-xs="column" fxLayoutAlign.gt-xs="center start">
+        <div class="black-fg" fxLayout="row" fxLayoutAlign="start center">
+            <mat-icon class="secondary-text s-18">home</mat-icon>
+            <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
+            <span class="secondary-text">投资组合</span>
+        </div>
+    </div>
+    <div class="left-side" fxLayout="row">
+        <button mat-icon-button class="sidebar-toggle" (click)="toggleSidebar('file-manager-main-sidebar')">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+
+    <div>
+        <button mat-fab class="add-file-button mat-warn" (click)="onClickAdd()">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+</div>

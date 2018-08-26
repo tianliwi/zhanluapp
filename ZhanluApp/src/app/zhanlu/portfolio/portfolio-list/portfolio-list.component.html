@@ -1,14 +1,4 @@
-<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-    <!-- Type Column -->
-    <!-- <ng-container matColumnDef="icon">
-        <mat-header-cell *matHeaderCellDef fxFlex="64px"></mat-header-cell>
-        <mat-cell *matCellDef="let row" fxFlex="64px">
-            <mat-icon class="type-icon" [ngClass]="row.type"></mat-icon>
-        </mat-cell>
-    </ng-container> -->
-
-    <!-- Name Column -->
+<mat-table [dataSource]="dataSource" class="mat-elevation-z12">
     <ng-container matColumnDef="id">
         <mat-header-cell *matHeaderCellDef> 债券代码 </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.id}}</mat-cell>
