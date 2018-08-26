@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { fuseAnimations } from '@fuse/animations';
+import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 export interface PortList {
   id: string;
   name: string;
@@ -45,10 +47,26 @@ const LIST: PortList[] = [
 
 export class PortfolioListComponent implements OnInit {
 
-  displayedColumns = ['id', 'name', 'par', 'updated'];
+  displayedColumns = ['id', 'name', 'par', 'updated', 'detail-button'];
   dataSource = LIST;
-  constructor() { }
+  selected: any;
+
+  constructor(
+    private _fuseSidebarService: FuseSidebarService) { }
 
   ngOnInit(): void {
+  }
+
+  OnSelect(selected): void {
+    console.log(selected);
+    this.selected = selected;
+  }
+
+  OnDoubleClick(selected): void {
+    console.log(selected.id);
+  }
+
+  toggleSidebar(name): void {
+    this._fuseSidebarService.getSidebar(name).toggleOpen();
   }
 }

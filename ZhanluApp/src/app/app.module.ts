@@ -31,7 +31,7 @@ const appRoutes: Routes = [
     },
     {
         path      : '**',
-        redirectTo: 'sample'
+        redirectTo: 'portfolio/addportfolio'
     }
 ];
 

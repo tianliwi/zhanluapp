@@ -1,0 +1,32 @@
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="bond_id">
+        <mat-header-cell *matHeaderCellDef> 债券代码 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.bond_id}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="trade_date">
+        <mat-header-cell *matHeaderCellDef> 交易日期 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.trade_date}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="par">
+        <mat-header-cell *matHeaderCellDef>持仓</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.par}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="price">
+        <mat-header-cell *matHeaderCellDef>交易价格</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.price}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="edit-button">
+        <mat-header-cell *matHeaderCellDef fxFlex="48px"></mat-header-cell>
+        <mat-cell *matCellDef="let row" fxFlex="48px">
+            <button mat-icon-button class="sidebar-toggle"
+                    (click)="OnClickEdit(row)">
+                <mat-icon class="secondary-text mat-blue">edit</mat-icon>
+            </button>
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;">
+    </mat-row>
+</mat-table>

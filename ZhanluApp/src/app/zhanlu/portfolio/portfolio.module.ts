@@ -6,6 +6,8 @@ import { AddPortfolioComponent } from './add-portfolio/add-portfolio.component';
 import { ImportTradeComponent } from './import-trade/import-trade.component';
 import { PortfolioListComponent } from './portfolio-list/portfolio-list.component';
 import { AddPortfolioDialogComponent } from './add-portfolio-dialog/add-portfolio-dialog.component';
+import { TradeListComponent } from './trade-list/trade-list.component';
+import { TradeDialogComponent } from './trade-dialog/trade-dialog.component';
 
 import { FuseSharedModule } from '@fuse/shared.module';
 import { FuseHighlightModule } from '@fuse/components/index';
@@ -16,19 +18,17 @@ import {
   MatIconModule, 
   MatButtonModule,
   MatTableModule,
-  MatDialogModule 
+  MatDialogModule,
+  MatFormFieldModule,
+  MatRippleModule
 } from '@angular/material';
   
 const routes: Routes = [
   {
     path: 'addportfolio',
     component: AddPortfolioComponent
-  },
-  {
-    path: 'importtrade',
-    component: ImportTradeComponent
   }
-]
+];
 
 @NgModule({
   imports: [
@@ -41,16 +41,21 @@ const routes: Routes = [
     MatButtonModule,
     MatTableModule,
     FuseSidebarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    MatRippleModule
   ],
   declarations: [
     AddPortfolioComponent, 
     ImportTradeComponent, 
     PortfolioListComponent, 
-    AddPortfolioDialogComponent
+    AddPortfolioDialogComponent,
+    TradeListComponent,
+    TradeDialogComponent
   ],
   entryComponents: [
-    AddPortfolioDialogComponent
+    AddPortfolioDialogComponent,    
+    TradeDialogComponent
   ]
 })
 export class PortfolioModule { }

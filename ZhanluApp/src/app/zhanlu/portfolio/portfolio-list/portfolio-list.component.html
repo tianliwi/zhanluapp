@@ -26,7 +26,21 @@
         <mat-cell *matCellDef="let element"> {{element.updated}}</mat-cell>
     </ng-container>
 
+    <!-- Detail Button Column -->
+    <ng-container matColumnDef="detail-button">
+        <mat-header-cell *matHeaderCellDef fxFlex="48px" fxHide.gt-md></mat-header-cell>
+        <mat-cell *matCellDef="let row" fxFlex="48px" fxHide.gt-md>
+            <button mat-icon-button class="sidebar-toggle" fxHide.gt-md
+                    (click)="toggleSidebar('app-import-trade')">
+                <mat-icon class="secondary-text">info</mat-icon>
+            </button>
+        </mat-cell>
+    </ng-container>
+
     <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;">
+    <mat-row *matRowDef="let row; columns: displayedColumns;"
+            (click)="OnSelect(row)"
+            (dblclick)="OnDoubleClick(row)"
+            [ngClass]="{'mat-primary-50-bg':row == selected}">
     </mat-row>
 </mat-table>
