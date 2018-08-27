@@ -2,11 +2,11 @@ import { FuseNavigation } from '@fuse/types';
 
 export const navigation: FuseNavigation[] = [
     {
-        id: 'addportfolio',
+        id: 'portfolio-mgmt',
         title: '投资组合',
         type: 'item',
-        icon: 'playlist_add',
-        url: '/portfolio/addportfolio'
+        icon: 'assignment',
+        url: '/portfolio-mgmt'
     },
     {
         id: 'portfolio-report',

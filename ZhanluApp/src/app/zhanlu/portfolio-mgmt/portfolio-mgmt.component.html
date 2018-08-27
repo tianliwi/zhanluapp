@@ -1,0 +1,72 @@
+<div id="portfolio" class="page-layout simple left-sidebar inner-scroll">
+
+  <fuse-sidebar class="sidebar main-sidebar" name="file-manager-main-sidebar" position="left" lockedOpen="gt-md">
+    <div class="header mat-accent-bg p-24 mat-elevation-z8">
+      <div class="black-fg" fxLayout="row" fxLayoutAlign="start center">
+        <mat-icon class="secondary-text s-18">home</mat-icon>
+        <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
+        <span class="secondary-text">投资组合</span>
+      </div>
+      <div class="breadcrumb text-truncate h1 pl-24" fxLayout="row" fxLayoutAlign="start center">
+        组合列表
+      </div>
+
+      <div>
+        <button mat-mini-fab class="add-file-button mat-warn"
+          matTooltip="新建投资组合"
+          (click)="OnClickPortfolioAdd()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="content mat-white-bg" fusePerfectScrollbar>
+      <app-portfolio></app-portfolio>
+    </div>
+  </fuse-sidebar>
+
+  <div class="center">
+    <div class="header mat-blue-bg p-24 mat-elevation-z8">
+      <!-- <div class="black-fg" fxLayout="row" fxLayoutAlign="start center">
+        <mat-icon class="secondary-text s-18">home</mat-icon>
+        <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
+        <span class="secondary-text">投资组合</span>
+      </div> -->
+      <div class="left-side center" fxLayout="row">
+          <h2>当前投资组合为：国债组合</h2>
+        <button mat-icon-button class="sidebar-toggle" fxHide.gt-md (click)="toggleSidebar('file-manager-main-sidebar')">
+          <mat-icon>info</mat-icon>
+        </button>
+      </div>
+
+      <div>
+        <button mat-mini-fab class="add-file-button mat-warn"
+          matTooltip="增加证券记录"
+          (click)="OnClickSecurityAdd()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="content mat-white-bg" fusePerfectScrollbar>
+      <app-security></app-security>
+    </div>
+  </div>
+
+  <fuse-sidebar class="sidebar details-sidebar" name="file-manager-details-sidebar" position="right" lockedOpen="gt-md">
+      <div class="header mat-indigo-bg p-24 mat-elevation-z8">
+          <div class="breadcrumb text-truncate h1 pl-24" fxLayout="row" fxLayoutAlign="start center">
+            交易记录
+          </div>
+    
+          <div>
+            <button mat-mini-fab class="add-file-button mat-warn"            
+              matTooltip="增加交易记录"
+              (click)="OnClickTradeAdd()">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+        </div>
+        <div class="content mat-white-bg" fusePerfectScrollbar>
+          <app-trade></app-trade>
+        </div>
+  </fuse-sidebar>
+</div>

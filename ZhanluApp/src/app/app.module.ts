@@ -17,13 +17,11 @@ import { fuseConfig } from 'app/fuse-config';
 import { AppComponent } from 'app/app.component';
 import { LayoutModule } from 'app/layout/layout.module';
 import { SampleModule } from 'app/main/sample/sample.module';
-// import { PortfolioModule } from 'app/zhanlu/portfolio/portfolio.module';
 
 const appRoutes: Routes = [
     {
-        path        : 'portfolio',
-        loadChildren: './zhanlu/portfolio/portfolio.module#PortfolioModule'
-        // redirectTo: 'zhanlu-portfolio'
+        path        : 'portfolio-mgmt',
+        loadChildren: './zhanlu/portfolio-mgmt/portfolio-mgmt.module#PortfolioMgmtModule'
     },
     {
         path        : 'report',
@@ -31,7 +29,7 @@ const appRoutes: Routes = [
     },
     {
         path      : '**',
-        redirectTo: 'portfolio/addportfolio'
+        redirectTo: 'portfolio-mgmt'
     }
 ];
 

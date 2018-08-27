@@ -1,0 +1,96 @@
+@import "src/@fuse/scss/fuse";
+
+#portfolio {
+    .sidebar {
+        width: 25% !important;
+        min-width: 320px !important;
+        max-width: 320px !important;
+
+        &.main-sidebar {
+        }
+
+        &.details-sidebar {
+            @include media-breakpoint("gt-md") {
+                z-index: 0;
+            }
+        }
+        .header {
+            position: relative;
+            height: 100px;
+            min-height: 100px;
+            max-height: 100px;
+
+            @include media-breakpoint-down("sm") {
+                height: 100px;
+                min-height: 100px;
+                max-height: 100px;
+            }
+
+            .add-file-button {
+                position: absolute;
+                bottom: -20px;
+                right: 30px;
+                z-index: 999;
+            }
+        }
+
+        .content {
+            flex: 1 1 auto;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+    }
+
+    .center {
+        overflow: hidden;
+
+        .header {
+            position: relative;
+            height: 100px;
+            min-height: 100px;
+            max-height: 100px;
+
+            @include media-breakpoint-down("sm") {
+                height: 100px;
+                min-height: 100px;
+                max-height: 100px;
+            }
+
+            .add-file-button {
+                position: absolute;
+                bottom: -20px;
+                right: 30px;
+                z-index: 999;
+            }
+        }
+
+        .content {
+            flex: 1 1 auto;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+    }
+
+    .type-icon {
+        &.folder {
+            &:before {
+                content: "folder";
+                color: #ffb300;
+            }
+        }
+
+        &.document {
+            &:before {
+                content: "insert_drive_file";
+                color: #1565c0;
+            }
+        }
+
+        &.spreadsheet {
+            &:before {
+                content: "insert_chart";
+                color: #4caf50;
+            }
+        }
+    }
+}

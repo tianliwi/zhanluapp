@@ -1,5 +1,9 @@
 @import "src/@fuse/scss/fuse";
 
+/deep/ .mat-tooltip {
+    font-size: 12px;
+}
+
 :host {
     position: relative;
     display: flex;
