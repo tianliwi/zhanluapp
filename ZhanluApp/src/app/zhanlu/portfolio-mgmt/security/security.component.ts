@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 import { SecurityDeleteDialogComponent } from '../security-delete-dialog/security-delete-dialog.component';
-export interface PortList {
+export interface SecurityList {
   id: string;
   name: string;
   par: number;
   updated: string;
 }
 
-const LIST: PortList[] = [
+const LIST: SecurityList[] = [
   {id: '010011.IB', name: '11年国债', par: 150, updated: '2018-08-20'},
   {id: '010012.IB', name: '12年国债', par: 250, updated: '2018-08-20'},
   {id: '010013.IB', name: '13年国债', par: 350, updated: '2018-08-20'},
@@ -46,7 +46,7 @@ const LIST: PortList[] = [
 })
 export class SecurityComponent implements OnInit {
 
-  displayedColumns = ['id', 'name', 'par', 'updated', 'delete-button', 'detail-button'];
+  displayedColumns = ['id', 'name', 'par', 'updated', 'detail-button'];
   dataSource = LIST;
   selected: any;
   dialogRef: any;

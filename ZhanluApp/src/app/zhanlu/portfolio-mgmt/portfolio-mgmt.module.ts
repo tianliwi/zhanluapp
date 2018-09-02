@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { 
   MatIconModule, 
@@ -50,6 +51,7 @@ const routes: Routes = [
     MatRippleModule,
     MatCardModule,
     MatTooltipModule,
+    HttpClientModule
   ],
   declarations: [
     PortfolioMgmtComponent,

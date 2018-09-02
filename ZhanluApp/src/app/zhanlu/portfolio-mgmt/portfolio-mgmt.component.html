@@ -12,10 +12,20 @@
       </div>
 
       <div>
-        <button mat-mini-fab class="add-file-button mat-warn"
+        <button mat-mini-fab class="add-file-button mat-white-bg"
           matTooltip="新建投资组合"
           (click)="OnClickPortfolioAdd()">
           <mat-icon>add</mat-icon>
+        </button>
+        <button mat-mini-fab class="delete-button mat-warn"
+          matTooltip="删除投资组合"
+          (click)="OnClickPortfolioAdd()">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-mini-fab class="edit-button mat-white-bg"
+          matTooltip="编辑投资组合"
+          (click)="OnClickPortfolioAdd()">
+          <mat-icon>edit</mat-icon>
         </button>
       </div>
     </div>
@@ -34,15 +44,20 @@
       <div class="left-side center" fxLayout="row">
           <h2>当前投资组合为：国债组合</h2>
         <button mat-icon-button class="sidebar-toggle" fxHide.gt-md (click)="toggleSidebar('file-manager-main-sidebar')">
-          <mat-icon>info</mat-icon>
+          <mat-icon>edit</mat-icon>
         </button>
       </div>
 
       <div>
-        <button mat-mini-fab class="add-file-button mat-warn"
+        <button mat-mini-fab class="add-file-button mat-white-bg"
           matTooltip="增加证券记录"
           (click)="OnClickSecurityAdd()">
           <mat-icon>add</mat-icon>
+        </button>
+        <button mat-mini-fab class="delete-button mat-warn"
+          matTooltip="删除证券记录"
+          (click)="OnClickPortfolioAdd()">
+          <mat-icon>delete</mat-icon>
         </button>
       </div>
     </div>
@@ -58,10 +73,20 @@
           </div>
     
           <div>
-            <button mat-mini-fab class="add-file-button mat-warn"            
+            <button mat-mini-fab class="add-file-button mat-white-bg"            
               matTooltip="增加交易记录"
               (click)="OnClickTradeAdd()">
               <mat-icon>add</mat-icon>
+            </button>
+            <button mat-mini-fab class="delete-button mat-warn"
+              matTooltip="删除交易记录"
+              (click)="OnClickPortfolioAdd()">
+              <mat-icon>delete</mat-icon>
+            </button>
+            <button mat-mini-fab class="edit-button mat-white-bg"
+              matTooltip="编辑交易记录"
+              (click)="OnClickPortfolioAdd()">
+              <mat-icon>edit</mat-icon>
             </button>
           </div>
         </div>
