@@ -42,7 +42,7 @@
         <span class="secondary-text">投资组合</span>
       </div> -->
       <div class="left-side center" fxLayout="row">
-          <h2>当前投资组合为：国债组合</h2>
+          <h2>当前投资组合为：{{selectedPortfolio.name}}</h2>
         <button mat-icon-button class="sidebar-toggle" fxHide.gt-md (click)="toggleSidebar('file-manager-main-sidebar')">
           <mat-icon>edit</mat-icon>
         </button>
@@ -61,13 +61,16 @@
         </button>
       </div>
     </div>
-    <div class="content mat-white-bg" fusePerfectScrollbar>
+    <div *ngIf="selectedPortfolio.id" class="content mat-white-bg" fusePerfectScrollbar>
       <app-security></app-security>
     </div>
+    <div *ngIf="!selectedPortfolio.id" class="content mat-white-bg" fusePerfectScrollbar>
+        <h2>请选择投资组合</h2>
+      </div>
   </div>
 
   <fuse-sidebar class="sidebar details-sidebar" name="file-manager-details-sidebar" position="right" lockedOpen="gt-md">
-      <div class="header mat-indigo-bg p-24 mat-elevation-z8">
+      <div class="header mat-accent-bg p-24 mat-elevation-z8">
           <div class="breadcrumb text-truncate h1 pl-24" fxLayout="row" fxLayoutAlign="start center">
             交易记录
           </div>
@@ -90,8 +93,11 @@
             </button>
           </div>
         </div>
-        <div class="content mat-white-bg" fusePerfectScrollbar>
+        <div *ngIf="selectedSecurity.id" class="content mat-white-bg" fusePerfectScrollbar>
           <app-trade></app-trade>
         </div>
+        <div *ngIf="!selectedSecurity.id" class="content mat-white-bg" fusePerfectScrollbar>
+            <h2>请选择证券</h2>
+          </div>
   </fuse-sidebar>
 </div>

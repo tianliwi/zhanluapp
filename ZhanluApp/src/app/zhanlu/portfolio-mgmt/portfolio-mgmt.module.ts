@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { PortmgmtService } from './portmgmt.service';
 
 import { 
   MatIconModule, 
@@ -51,7 +52,7 @@ const routes: Routes = [
     MatRippleModule,
     MatCardModule,
     MatTooltipModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   declarations: [
     PortfolioMgmtComponent,
@@ -68,6 +69,9 @@ const routes: Routes = [
     SecurityDialogComponent,
     TradeDialogComponent,
     SecurityDeleteDialogComponent
+  ],
+  providers: [
+    PortmgmtService
   ]
 })
 export class PortfolioMgmtModule { }

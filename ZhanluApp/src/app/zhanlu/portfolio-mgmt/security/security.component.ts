@@ -2,42 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 import { SecurityDeleteDialogComponent } from '../security-delete-dialog/security-delete-dialog.component';
+import { IPortfolioEntry, ISecurity } from '../models/portfolio.model';
+import { PortmgmtService } from '../portmgmt.service';
+
 export interface SecurityList {
   id: string;
   name: string;
   par: number;
   updated: string;
 }
-
-const LIST: SecurityList[] = [
-  {id: '010011.IB', name: '11年国债', par: 150, updated: '2018-08-20'},
-  {id: '010012.IB', name: '12年国债', par: 250, updated: '2018-08-20'},
-  {id: '010013.IB', name: '13年国债', par: 350, updated: '2018-08-20'},
-  {id: '010011.IB', name: '11年国债', par: 150, updated: '2018-08-20'},
-  {id: '010012.IB', name: '12年国债', par: 250, updated: '2018-08-20'},
-  {id: '010013.IB', name: '13年国债', par: 350, updated: '2018-08-20'},
-  {id: '010011.IB', name: '11年国债', par: 150, updated: '2018-08-20'},
-  {id: '010012.IB', name: '12年国债', par: 250, updated: '2018-08-20'},
-  {id: '010013.IB', name: '13年国债', par: 350, updated: '2018-08-20'},
-  {id: '010011.IB', name: '11年国债', par: 150, updated: '2018-08-20'},
-  {id: '010012.IB', name: '12年国债', par: 250, updated: '2018-08-20'},
-  {id: '010013.IB', name: '13年国债', par: 350, updated: '2018-08-20'},
-  {id: '010011.IB', name: '11年国债', par: 150, updated: '2018-08-20'},
-  {id: '010012.IB', name: '12年国债', par: 250, updated: '2018-08-20'},
-  {id: '010013.IB', name: '13年国债', par: 350, updated: '2018-08-20'},
-  {id: '010011.IB', name: '11年国债', par: 150, updated: '2018-08-20'},
-  {id: '010012.IB', name: '12年国债', par: 250, updated: '2018-08-20'},
-  {id: '010013.IB', name: '13年国债', par: 350, updated: '2018-08-20'},
-  {id: '010011.IB', name: '11年国债', par: 150, updated: '2018-08-20'},
-  {id: '010012.IB', name: '12年国债', par: 250, updated: '2018-08-20'},
-  {id: '010013.IB', name: '13年国债', par: 350, updated: '2018-08-20'},
-  {id: '010011.IB', name: '11年国债', par: 150, updated: '2018-08-20'},
-  {id: '010012.IB', name: '12年国债', par: 250, updated: '2018-08-20'},
-  {id: '010013.IB', name: '13年国债', par: 350, updated: '2018-08-20'},
-  {id: '010011.IB', name: '11年国债', par: 150, updated: '2018-08-20'},
-  {id: '010012.IB', name: '12年国债', par: 250, updated: '2018-08-20'},
-  {id: '010013.IB', name: '13年国债', par: 350, updated: '2018-08-20'},
-];
 
 @Component({
   selector: 'app-security',
@@ -47,29 +20,29 @@ const LIST: SecurityList[] = [
 export class SecurityComponent implements OnInit {
 
   displayedColumns = ['id', 'name', 'par', 'updated', 'detail-button'];
-  dataSource = LIST;
+  dataSource: ISecurity[] = [];
   selected: any;
   dialogRef: any;
+  selectedPortfolio: IPortfolioEntry;
 
   constructor(
     public _matDialog: MatDialog,
-    private _fuseSidebarService: FuseSidebarService) { }
+    private _fuseSidebarService: FuseSidebarService,
+    private _portmgmtService: PortmgmtService) { }
 
   ngOnInit(): void {
+    this._portmgmtService.onPortfolioSelected.subscribe(portfolio => this.selectedPortfolio = portfolio);
+    this._portmgmtService.getSecurities(this.selectedPortfolio).subscribe(securities => this.dataSource = securities);
   }
 
   OnSelect(selected): void {
-    console.log(selected);
     this.selected = selected;
+    this._portmgmtService.onSecuritySelected.next(selected);
   }
 
   OnDelete(row): void {
     console.log(row);
     this.dialogRef = this._matDialog.open(SecurityDeleteDialogComponent);
-  }
-
-  OnDoubleClick(selected): void {
-    console.log(selected.id);
   }
 
   toggleSidebar(name): void {

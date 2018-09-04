@@ -36,6 +36,6 @@
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="OnSelect(row)" (dblclick)="OnDoubleClick(row)" [ngClass]="{'mat-primary-50-bg':row == selected}">
+  <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="OnSelect(row)" [ngClass]="{'mat-primary-50-bg':row == selected}">
   </mat-row>
 </mat-table>

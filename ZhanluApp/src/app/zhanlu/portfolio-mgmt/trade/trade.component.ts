@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IPortfolioEntry, ISecurity, ITrade } from '../models/portfolio.model';
+import { PortmgmtService } from '../portmgmt.service';
 
 export interface TradeList {
   bond_id: string;
@@ -42,11 +44,17 @@ const LIST: TradeList[] = [
 export class TradeComponent implements OnInit {
 
   displayedColumns = ['trade_date', 'par', 'price'];
-  dataSource = LIST;
+  dataSource: ITrade[] = [];
+  selectedSecurity: ISecurity;
 
-  constructor() { }
+  constructor(
+    private _portmgmtSerivce: PortmgmtService
+  ) { }
 
   ngOnInit():void {
+    this._portmgmtSerivce.getTrades(this.selectedSecurity).subscribe(
+      trades => this.dataSource = trades
+    );
   }
 
   OnClickEdit(row): void {

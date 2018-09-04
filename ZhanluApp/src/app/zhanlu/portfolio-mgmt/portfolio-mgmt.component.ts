@@ -4,6 +4,8 @@ import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 import { PortfolioDialogComponent } from './portfolio-dialog/portfolio-dialog.component';
 import { TradeDialogComponent } from './trade-dialog/trade-dialog.component';
 import { SecurityDialogComponent } from './security-dialog/security-dialog.component';
+import { IPortfolioEntry, ISecurity } from './models/portfolio.model';
+import { PortmgmtService } from './portmgmt.service';
 
 @Component({
   selector: 'app-portfolio-mgmt',
@@ -13,12 +15,17 @@ import { SecurityDialogComponent } from './security-dialog/security-dialog.compo
 export class PortfolioMgmtComponent implements OnInit {
 
   dialogRef: any;
+  selectedPortfolio: IPortfolioEntry;
+  selectedSecurity: ISecurity;
 
   constructor(
     public _matDialog: MatDialog,
-    private _fuseSidebarService: FuseSidebarService) { }
+    private _fuseSidebarService: FuseSidebarService,
+    private _portmgmtService: PortmgmtService) { }
 
   ngOnInit(): void {
+    this._portmgmtService.onPortfolioSelected.subscribe(selectedPortfolio => this.selectedPortfolio = selectedPortfolio);
+    this._portmgmtService.onSecuritySelected.subscribe(selectedSecurity => this.selectedSecurity = selectedSecurity);
   }
   
   OnClickPortfolioAdd(): void{
