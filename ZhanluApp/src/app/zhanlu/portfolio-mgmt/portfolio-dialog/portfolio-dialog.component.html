@@ -1,3 +1,11 @@
-<p>
-  portfolio-dialog works!
-</p>
+<div>
+  <h2>新建组合</h2>
+  <span>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="组合名称" type="text" [(ngModel)]="newName" required>
+  </mat-form-field></span>
+  </div>  
+<div>
+  <button mat-button (click)="OnAdd()" mat-dialog-close>确定</button>
+  <button mat-button mat-dialog-close>取消</button>
+</div>

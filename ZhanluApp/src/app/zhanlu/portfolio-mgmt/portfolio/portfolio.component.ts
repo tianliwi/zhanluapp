@@ -25,11 +25,7 @@ export class PortfolioComponent implements OnInit {
 
   ngOnInit(): void {
     this._portmgmtService.getPortfolios()
-      .subscribe(data => {
-        this.dataSource = data;
-        // this._portmgmtService.onPortfolioSelected.next(data[0]);
-      }
-      );
+      .then(res => this._portmgmtService.portfolioList.subscribe(list => this.dataSource = list));
   }
 
   OnSelect(selected): void {

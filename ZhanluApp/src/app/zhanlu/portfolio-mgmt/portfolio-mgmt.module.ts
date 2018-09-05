@@ -13,7 +13,9 @@ import {
   MatRippleModule,
   MatCardModule,
   MatTooltipModule,
+  MatInputModule
 } from '@angular/material';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 import { FuseSharedModule } from '@fuse/shared.module';
 import { FuseHighlightModule } from '@fuse/components/index';
@@ -53,6 +55,8 @@ const routes: Routes = [
     MatCardModule,
     MatTooltipModule,
     HttpClientModule,
+    MatToolbarModule,
+    MatInputModule
   ],
   declarations: [
     PortfolioMgmtComponent,
