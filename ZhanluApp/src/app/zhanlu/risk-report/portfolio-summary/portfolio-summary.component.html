@@ -1,0 +1,18 @@
+<!-- <fuse-widget class="widget mat-accent-bg" fxFlex="100" fxFlex.gt-sm="50"> -->
+
+  <!-- Front -->
+  <div class="fuse-widget-front mat-white-bg mat-elevation-z8">
+      <mat-list>
+          <!-- <h2 mat-subheader>组合概览报告</h2> -->
+          <mat-list-item *ngFor="let note of notes">
+            <!-- <mat-icon mat-list-icon>note</mat-icon> -->
+            <h4 mat-line>{{note.name}}</h4>
+            <span><p mat-line> {{note.value}} </p></span>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+        </mat-list>
+
+  </div>
+  <!-- / Front -->
+
+<!-- </fuse-widget> -->

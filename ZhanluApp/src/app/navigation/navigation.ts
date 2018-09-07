@@ -9,6 +9,20 @@ export const navigation: FuseNavigation[] = [
         url: '/portfolio-mgmt'
     },
     {
+        id: 'risk-mgmt',
+        title: '风险管理',
+        type: 'group',
+        children: [
+            {
+                id: 'risk-report',
+                title: '风险报告',
+                type: 'item',
+                icon: 'widgets',
+                url: '/risk-report'
+            }
+        ]
+    }
+    {
         id: 'portfolio-report',
         title: '组合报告',
         type: 'group',

@@ -1,0 +1,90 @@
+<div id="portfolio" class="page-layout simple left-sidebar tabbed inner-scroll">
+
+  <!-- TOP BACKGROUND -->
+  <div class="top-bg mat-accent-bg"></div>
+  <!-- / TOP BACKGROUND -->
+
+  <!-- SIDEBAR -->
+  <fuse-sidebar class="sidebar main-sidebar" name="file-manager-main-sidebar" position="left" lockedOpen="gt-md">
+      <div class="header mat-accent-bg p-24 mat-elevation-z8">
+        <div class="black-fg" fxLayout="row" fxLayoutAlign="start center">
+          <mat-icon class="secondary-text s-18">home</mat-icon>
+          <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
+          <span class="secondary-text">风险报告</span>
+        </div>
+        <div class="breadcrumb text-truncate h1 pl-24" fxLayout="row" fxLayoutAlign="start center">
+          组合列表
+        </div>
+      </div>
+      <div class="content mat-white-bg" fusePerfectScrollbar>
+        <app-portfolio-selector></app-portfolio-selector>
+      </div>
+    </fuse-sidebar>
+  <!-- / SIDEBAR -->
+
+  <!-- CENTER -->
+  <div class="center">
+    <div class="content mat-white-bg">
+
+        <mat-tab-group>
+
+            <mat-tab label="组合概览">
+                <div class="tab-content p-24" fusePerfectScrollbar>
+                    <!-- PUT YOUR TAB CONTENT HERE -->
+                    <app-portfolio-summary></app-portfolio-summary>
+                    <!-- / PUT YOUR TAB CONTENT HERE -->
+                </div>
+            </mat-tab>
+
+            <mat-tab label="组合分解">
+                <div class="tab-content p-24" fusePerfectScrollbar>
+                    <!-- PUT YOUR TAB CONTENT HERE -->
+                    <app-portfolio-breakdown></app-portfolio-breakdown>
+                    <!-- / PUT YOUR TAB CONTENT HERE -->
+                </div>
+            </mat-tab>
+
+            <mat-tab label="现金流">
+                <div class="tab-content p-24" fusePerfectScrollbar>
+                    <!-- PUT YOUR TAB CONTENT HERE -->
+                    <app-cashflow></app-cashflow>
+                    <!-- / PUT YOUR TAB CONTENT HERE -->
+                </div>
+            </mat-tab>
+
+            <mat-tab label="关键期久期">
+                <div class="tab-content p-24" fusePerfectScrollbar>
+                    <!-- PUT YOUR TAB CONTENT HERE -->
+                    <app-keyrate-duration></app-keyrate-duration>
+                    <!-- / PUT YOUR TAB CONTENT HERE -->
+                </div>
+            </mat-tab>
+
+            <mat-tab label="关键期DV01">
+                <div class="tab-content p-24" fusePerfectScrollbar>
+                    <!-- PUT YOUR TAB CONTENT HERE -->
+                    <app-keyrate-dv01></app-keyrate-dv01>
+                    <!-- / PUT YOUR TAB CONTENT HERE -->
+                </div>
+            </mat-tab>
+
+            <mat-tab label="截面风险">
+                <div class="tab-content p-24" fusePerfectScrollbar>
+                    <!-- PUT YOUR TAB CONTENT HERE -->
+                    <app-risk-snapshot></app-risk-snapshot>
+                    <!-- / PUT YOUR TAB CONTENT HERE -->
+                </div>
+            </mat-tab>
+
+            <mat-tab label="动态风险">
+                <div class="tab-content p-24" fusePerfectScrollbar>
+                    <!-- PUT YOUR TAB CONTENT HERE -->
+                    <app-risk-timeseries></app-risk-timeseries>
+                    <!-- / PUT YOUR TAB CONTENT HERE -->
+                </div>
+            </mat-tab>
+
+        </mat-tab-group>
+    </div>
+  </div>
+</div>

@@ -28,6 +28,10 @@ const appRoutes: Routes = [
         loadChildren: './zhanlu/portfolio-report/portfolio-report.module#PortfolioReportModule'
     },
     {
+        path        : 'risk-report',
+        loadChildren: './zhanlu/risk-report/risk-report.module#RiskReportModule'
+    },
+    {
         path      : '**',
         redirectTo: 'portfolio-mgmt'
     }
