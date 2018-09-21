@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material';
 import { HttpClient } from '@angular/common/http';
 import { IPortfolioEntry } from '../models/portfolio.model';
 import { PortmgmtService } from '../portmgmt.service';
-
+ 
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
@@ -23,7 +23,7 @@ export class PortfolioComponent implements OnInit {
     private _httpClient: HttpClient) { 
     }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
     this._portmgmtService.getPortfolios()
       .then(res => this._portmgmtService.portfolioList.subscribe(list => this.dataSource = list));
   }

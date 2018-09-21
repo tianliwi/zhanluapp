@@ -1,0 +1,19 @@
+{
+    "portfolio_id": "001",
+    "portfolio_name": "国债组合",
+    "summary": {
+        "market_val": 5296452,
+        "par_val": 5000000,
+        "accr_int": 32603,
+        "total_val": 5296452,
+        "est_annual_income": 165777,
+        "num_pos": 20,
+        "avg_coupon": 0.0325,
+        "avg_maturity": 15,
+        "avg_dura": 10,
+        "avg_yield_maturity": 0.0209,
+        "avg_yield_callworst": 0.0204,
+        "avg_credit_rating": "A",
+        "avg_underlying_rating": "AA"
+    }
+}

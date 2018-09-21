@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RiskReport } from './models/risk-report.model';
+import { RiskReportService } from './risk-report.service';
 
 @Component({
   selector: 'app-risk-report',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RiskReportComponent implements OnInit {
 
-  constructor() { }
+  report_obj: RiskReport;
 
-  ngOnInit() {
+  constructor(
+    private _riskReportService: RiskReportService
+  ) { }
+
+  ngOnInit(): void {
+    this._riskReportService.getRiskReport()
+      .subscribe(obj => this.report_obj = obj);
   }
 
+  onClick(){
+    console.log(this.report_obj);
+  }
 }
