@@ -13,14 +13,18 @@ export class RiskReportComponent implements OnInit {
 
   constructor(
     private _riskReportService: RiskReportService
-  ) { }
-
-  ngOnInit(): void {
-    this._riskReportService.getRiskReport()
-      .subscribe(obj => this.report_obj = obj);
+  ) { 
+    this.report_obj = new RiskReport();
   }
 
-  onClick(){
+  ngOnInit(): void {
+    // this._riskReportService.getRiskReport()
+    //   .then(res => this._riskReportService.riskReportData.subscribe(obj => this.report_obj = obj));
+    this._riskReportService.riskReportData.subscribe(obj => this.report_obj = obj);
+    
+  }
+
+  onClick(): void{
     console.log(this.report_obj);
   }
 }

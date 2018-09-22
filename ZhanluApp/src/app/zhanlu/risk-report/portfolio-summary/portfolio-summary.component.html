@@ -4,10 +4,70 @@
   <div class="fuse-widget-front mat-white-bg mat-elevation-z8">
       <mat-list>
           <!-- <h2 mat-subheader>组合概览报告</h2> -->
-          <mat-list-item *ngFor="let note of notes">
+          <mat-list-item>
             <!-- <mat-icon mat-list-icon>note</mat-icon> -->
-            <h4 mat-line>{{note.name}}</h4>
-            <span><p mat-line> {{note.value}} </p></span>
+            <h4 mat-line>市场总值</h4>
+            <span><p mat-line> {{riskReport.summary.market_val}} </p></span>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+          <mat-list-item>
+            <h4 mat-line>总面值</h4>
+            <span><p mat-line> {{riskReport.summary.par_val}} </p></span>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+          <mat-list-item>
+            <h4 mat-line>应计利息</h4>
+            <span><p mat-line> {{riskReport.summary.accr_int}} </p></span>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+          <mat-list-item>
+            <h4 mat-line>总价值</h4>
+            <span><p mat-line> {{riskReport.summary.total_val}} </p></span>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+          <mat-list-item>
+            <h4 mat-line>预计年收入</h4>
+            <span><p mat-line> {{riskReport.summary.est_annual_income}} </p></span>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+          <mat-list-item>
+            <h4 mat-line>Number of Positions</h4>
+            <span><p mat-line> {{riskReport.summary.num_pos}} </p></span>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+          <mat-list-item>
+            <h4 mat-line>Average Coupon</h4>
+            <span><p mat-line> {{riskReport.summary.avg_coupon}} </p></span>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+          <mat-list-item>
+            <h4 mat-line>Average Maturity</h4>
+            <span><p mat-line> {{riskReport.summary.avg_maturity}} </p></span>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+          <mat-list-item>
+            <h4 mat-line>Average Duration</h4>
+            <span><p mat-line> {{riskReport.summary.avg_dura}} </p></span>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+          <mat-list-item>
+            <h4 mat-line>Average Yield to Maturity</h4>
+            <span><p mat-line> {{riskReport.summary.avg_yield_maturity}} </p></span>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+          <mat-list-item>
+            <h4 mat-line>Average Yield to Call/Worst</h4>
+            <span><p mat-line> {{riskReport.summary.avg_yield_callworst}} </p></span>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+          <mat-list-item>
+            <h4 mat-line>Average Credit Rating</h4>
+            <span><p mat-line> {{riskReport.summary.avg_credit_rating}} </p></span>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+          <mat-list-item>
+            <h4 mat-line>Average Unverlying Rating</h4>
+            <span><p mat-line> {{riskReport.summary.avg_underlying_rating}} </p></span>
             <mat-divider></mat-divider>
           </mat-list-item>
         </mat-list>

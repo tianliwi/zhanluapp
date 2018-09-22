@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject, EMPTY, Observer } from 'rxjs';
-import { RiskReport } from './models/risk-report.model';
+import { RiskReport, ReportSummary } from './models/risk-report.model';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
+
 export class RiskReportService {
 
   riskReportData: BehaviorSubject<any>;
 
   constructor(
     private _httpClient: HttpClient
-    ) { }
+    ) {
+      this.riskReportData = new BehaviorSubject({});
+    }
 
   getRiskReport(): Promise<RiskReport> {
     return new Promise((resolve, reject) => {

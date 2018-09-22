@@ -15,7 +15,6 @@ export class PortfolioComponent implements OnInit {
   displayedColumns = ['name', 'updated'];
   dataSource: IPortfolioEntry[];
   selected: any;
-  private _url = '/api-fake/portfolio-db.json';
 
   constructor(
     public _matDialog: MatDialog,

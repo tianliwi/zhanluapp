@@ -31,6 +31,7 @@ import { KeyrateDurationComponent } from './keyrate-duration/keyrate-duration.co
 import { KeyrateDv01Component } from './keyrate-dv01/keyrate-dv01.component';
 import { RiskSnapshotComponent } from './risk-snapshot/risk-snapshot.component';
 import { RiskTimeseriesComponent } from './risk-timeseries/risk-timeseries.component';
+import { RiskReportService } from './risk-report.service';
 
 const routes: Routes = [
     {
@@ -71,6 +72,9 @@ const routes: Routes = [
         KeyrateDv01Component,
         RiskSnapshotComponent,
         RiskTimeseriesComponent
+    ],,
+    providers: [
+      RiskReportService
     ]
 })
 export class RiskReportModule {}
