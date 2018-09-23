@@ -14,14 +14,18 @@ export class ReportSummary {
     avg_underlying_rating: string;
 }
 
+export class Breakdown {
+    name: string;
+    value: number;
+    pct: number;
+}
+
 export class RiskReport {
     portfolio_id: string;
     portfolio_name: string;
-    summary: ReportSummary;
+    summary: ReportSummary = {};
+    breakdown_rating: Breakdown[] = [];
 
     constructor() {
-        this.portfolio_id = '';
-        this.portfolio_name = '';
-        this.summary = new ReportSummary();
     }
 }

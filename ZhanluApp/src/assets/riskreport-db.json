@@ -15,5 +15,37 @@
         "avg_yield_callworst": 0.0204,
         "avg_credit_rating": "A",
         "avg_underlying_rating": "AA"
-    }
+    },
+    "breakdown_rating": [
+        {
+            "name": "AAA",
+            "value": 313772,
+            "pct": 0.059
+        },
+        {
+            "name": "AA",
+            "value": 2319627,
+            "pct": 0.438
+        },
+        {
+            "name": "A",
+            "value": 1047512,
+            "pct": 0.198
+        },
+        {
+            "name": "BBB",
+            "value": 1112430,
+            "pct": 0.21
+        },
+        {
+            "name": "Treasuries",
+            "value": 253110,
+            "pct": 0.048
+        },
+        {
+            "name": "CDS",
+            "value": 250000,
+            "pct": 0.047
+        }
+    ]
 }

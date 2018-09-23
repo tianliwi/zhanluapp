@@ -6,7 +6,7 @@ import { PortfolioSelectorComponent } from './portfolio-selector/portfolio-selec
 import { ReportFrameComponent } from './report-frame/report-frame.component';
 import { PortfolioSummaryComponent } from './portfolio-summary/portfolio-summary.component';
 import { PortfolioBreakdownComponent } from './portfolio-breakdown/portfolio-breakdown.component';
-
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 import {
     MatIconModule,
     MatButtonModule,
@@ -17,7 +17,8 @@ import {
     MatCardModule,
     MatTooltipModule,
     MatInputModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSelectModule
 } from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
@@ -59,7 +60,9 @@ const routes: Routes = [
         FuseWidgetModule,
         FuseSidebarModule,
         MatTabsModule,
-        MatListModule
+        MatListModule,
+        NgxChartsModule,
+        MatSelectModule
     ],
     declarations: [
         RiskReportComponent,
