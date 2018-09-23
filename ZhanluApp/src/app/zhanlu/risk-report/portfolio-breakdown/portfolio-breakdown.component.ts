@@ -46,7 +46,7 @@ export class PortfolioBreakdownComponent implements OnInit {
             explodeSlices: false,
             labels: true,
             doughnut: false,
-            gradient: true,
+            gradient: false,
             scheme: {
                 domain: ['#f44336', '#9c27b0', '#03a9f4', '#e91e63', '#a342e1']
             },
